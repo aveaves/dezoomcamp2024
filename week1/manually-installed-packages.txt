@@ -1,0 +1,2 @@
+conda create -n dezcw1 anaconda
+pip install pgcli
