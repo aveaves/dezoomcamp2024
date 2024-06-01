@@ -21,3 +21,10 @@ services:
       - ./pgadmin_config:/var/lib/pgadmin:rw
     depends_on:
       - db
+  taxi_ingest:
+    container_name: taxi_ingest
+    build:
+      context: .
+      dockerfile: ingest.Dockerfile
+    depends_on:
+      - db
