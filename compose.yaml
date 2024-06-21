@@ -11,7 +11,7 @@ services:
       - ./db_data:/var/lib/postgresql/data:rw
   pgadmin:
     container_name: pgadmin4
-    image: dpage/pgadmin4
+    image: dpage/pgadmin4:8.8
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: admin
@@ -24,7 +24,10 @@ services:
   taxi_ingest:
     container_name: taxi_ingest
     build:
-      context: .
-      dockerfile: ingest.Dockerfile
+      context: ./taxi_ingest
+      dockerfile: taxi_ingest.Dockerfile
+    volumes:
+      - ./taxi_ingest:/workspace
+    command: sleep infinity
     depends_on:
       - db
