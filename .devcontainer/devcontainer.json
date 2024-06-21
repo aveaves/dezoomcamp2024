@@ -1,0 +1,6 @@
+{
+    "name": "Ingest Data Python",
+    "dockerComposeFile": "../compose.yaml",
+    "service": "taxi_ingest",
+    "workspaceFolder": "/workspace"
+}
