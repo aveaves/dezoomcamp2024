@@ -2,6 +2,11 @@ FROM python:3.9
 
 # RUN addgroup --gid 10001 --system nonroot \
 #  && adduser  --uid 10000 --system --ingroup nonroot --home /home/nonroot nonroot
+RUN SNIPPET="export PROMPT_COMMAND='history -a' \
+    && export HISTFILE=/container-profile/.bash_history \
+    && export HISTSIZE=-1 \
+    && export HISTFILESIZE=-1" \
+    && echo "$SNIPPET" >> "/root/.bashrc"
 
 RUN apt-get update && apt-get install -y wget less
 
@@ -12,7 +17,8 @@ WORKDIR /project
 # ENV SHELL /bin/bash
 
 COPY requirements.txt requirements.txt
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install --upgrade pip && pip install -r requirements.txt \
+    && pip install pgcli
 # COPY taxi_ingest.py taxi_ingest.py
 # ENTRYPOINT [ "python" "taxi_ingest.py"]
 # CMD ["--user", "admin", \
