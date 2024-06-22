@@ -1,15 +1,15 @@
 FROM python:3.9
 
-RUN addgroup --gid 10001 --system nonroot \
- && adduser  --uid 10000 --system --ingroup nonroot --home /home/nonroot nonroot
+# RUN addgroup --gid 10001 --system nonroot \
+#  && adduser  --uid 10000 --system --ingroup nonroot --home /home/nonroot nonroot
 
-RUN apt-get update && apt-get install -y wget
+RUN apt-get update && apt-get install -y wget less
 
 WORKDIR /project
-RUN chown -R nonroot:nonroot /project
+# RUN chown -R nonroot:nonroot /project
 
-USER nonroot
-ENV SHELL /bin/bash
+# USER nonroot
+# ENV SHELL /bin/bash
 
 COPY requirements.txt requirements.txt
 RUN pip install --upgrade pip && pip install -r requirements.txt
