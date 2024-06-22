@@ -1,0 +1,6 @@
+# Programs, packages and miscellaneous configs to add in a dev container for
+# better development experience.
+
+1. Program - less
+2. Program - pgcli
+3. Config - sync terminal history between host and container
