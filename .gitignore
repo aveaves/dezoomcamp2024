@@ -1,3 +1,4 @@
+taxi_ingest/taxi_data/
 db_data/
 pgadmin_config/
 .DS_Store
