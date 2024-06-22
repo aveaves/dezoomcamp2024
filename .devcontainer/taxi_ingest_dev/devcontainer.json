@@ -15,7 +15,10 @@
                 "ms-vscode.live-server",
                 "GitHub.copilot-chat",
                 "GitHub.copilot"
-            ]
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python"
+            }
         }
     }
 }
