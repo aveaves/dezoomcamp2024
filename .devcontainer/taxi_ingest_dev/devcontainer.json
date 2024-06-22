@@ -1,0 +1,21 @@
+{
+    "name": "Ingest Taxi Data Py",
+    "dockerComposeFile": "../../compose.yaml",
+    "service": "taxi_ingest",
+    "workspaceFolder": "/project/taxi_ingest",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "streetsidesoftware.code-spell-checker",
+                "ms-python.autopep8",
+                "janisdd.vscode-edit-csv",
+                "mechatroner.rainbow-csv",
+                "esbenp.prettier-vscode",
+                "ms-python.python",
+                "ms-vscode.live-server",
+                "GitHub.copilot-chat",
+                "GitHub.copilot"
+            ]
+        }
+    }
+}
