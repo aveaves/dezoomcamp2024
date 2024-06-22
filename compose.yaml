@@ -28,6 +28,10 @@ services:
       dockerfile: taxi_ingest.Dockerfile
     volumes:
       - .:/project
+      - dezoomcamp-container-profile:/container-profile
     command: sleep infinity
     depends_on:
       - db
+# For saving bash profile, bash history, rc etc.
+volumes:
+  dezoomcamp-container-profile:
