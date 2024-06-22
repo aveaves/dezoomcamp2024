@@ -27,7 +27,7 @@ services:
       context: ./taxi_ingest
       dockerfile: taxi_ingest.Dockerfile
     volumes:
-      - ./taxi_ingest:/workspace
+      - .:/project
     command: sleep infinity
     depends_on:
       - db

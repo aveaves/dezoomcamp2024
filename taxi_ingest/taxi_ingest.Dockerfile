@@ -5,8 +5,8 @@ RUN addgroup --gid 10001 --system nonroot \
 
 RUN apt-get update && apt-get install -y wget
 
-WORKDIR /workspace
-RUN chown -R nonroot:nonroot /workspace
+WORKDIR /project
+RUN chown -R nonroot:nonroot /project
 
 USER nonroot
 ENV SHELL /bin/bash
